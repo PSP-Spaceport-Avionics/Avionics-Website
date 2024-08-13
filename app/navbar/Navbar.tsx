@@ -2,10 +2,12 @@ import React from 'react';
 import NavBarButton from './NavbarButton';
 import Link from 'next/link';
 import { Button } from '@mui/material';
+import { useState, useEffect } from 'react';
 
 import './Navbar.css';
 
 import logo from '../../styles/logo.png';
+import star from '../../styles/starburst-four-point.svg';
 
 const buttons = [
 	{ href: '/about', label: 'About' },
@@ -15,14 +17,36 @@ const buttons = [
 ];
 
 function navbar() {
+	const [showNavBar, setShowNavbar] = useState(true);
+	const [lastScrollY, setLastScrollY] = useState(0);
+
+	const controlNavbar = () => {
+		if (window.scrollY > lastScrollY) {
+			setShowNavbar(false);
+		} else {
+			setShowNavbar(true);
+		}
+		setLastScrollY(window.scrollY);
+	};
+
+	useEffect(() => {
+		window.addEventListener('scroll', controlNavbar);
+		return () => {
+			window.removeEventListener('scroll', controlNavbar);
+		};
+	}, [lastScrollY]);
 	return (
-		<nav className='navbar items-center'>
-			<img
-				src={logo.src}
-				alt='SPA Avionics Logo'
-				className='logo ml-10'
-			/>
-			<span className='logoText ml-3 mr-10 text-2xl'>SP Avionics</span>
+		<nav className={`navbar items-center ${showNavBar ? 'show' : 'hide'}`}>
+			<Link href={'/'} className='logo flex items-center'>
+				<img
+					src={star.src}
+					alt='SPA Avionics Logo'
+					className='logoImg ml-10 h-full'
+				/>
+				<span className='logoText ml-3 mr-10 text-2xl'>
+					SP Avionics
+				</span>
+			</Link>
 			<div className='space-x-4'>
 				{buttons.map((button) => (
 					<Link key={button.href} href={button.href} passHref>
