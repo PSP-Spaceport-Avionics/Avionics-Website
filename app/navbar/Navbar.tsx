@@ -1,67 +1,27 @@
 import React from 'react';
+import NavBarButton from './NavbarButton';
 
-import './NavBar.css';
+import './Navbar.css';
 import Link from 'next/link';
 import { Button } from '@mui/material';
+
+const buttons = [
+	{ href: '/about', label: 'About' },
+	{ href: '/history', label: 'History' },
+	{ href: '/projects', label: 'Projects' },
+	{ href: '/contact', label: 'Contact' },
+];
+
 function navbar() {
 	return (
-		<nav className='navBar items-center'>
+		<nav className='navbar items-center'>
 			<div className='logo mx-10'>logo</div>
 			<div className='space-x-4'>
-				<Link href='/about'>
-					<Button
-						variant='text'
-						disableElevation
-						sx={{
-							color: 'secondary.main',
-							'&:hover': {
-								color: 'primary.main',
-								backgroundColor: 'black',
-							},
-						}}
-					>
-						About
-					</Button>
-					<Button
-						variant='text'
-						disableElevation
-						sx={{
-							color: 'secondary.main',
-							'&:hover': {
-								color: 'primary.main',
-								backgroundColor: 'black',
-							},
-						}}
-					>
-						History
-					</Button>
-					<Button
-						variant='text'
-						disableElevation
-						sx={{
-							color: 'secondary.main',
-							'&:hover': {
-								color: 'primary.main',
-								backgroundColor: 'black',
-							},
-						}}
-					>
-						Projects
-					</Button>
-					<Button
-						variant='text'
-						disableElevation
-						sx={{
-							color: 'secondary.main',
-							'&:hover': {
-								color: 'primary.main',
-								backgroundColor: 'black',
-							},
-						}}
-					>
-						Contact
-					</Button>
-				</Link>
+				{buttons.map((button) => (
+					<Link key={button.href} href={button.href} passHref>
+						<NavBarButton>{button.label}</NavBarButton>
+					</Link>
+				))}
 			</div>
 		</nav>
 	);
