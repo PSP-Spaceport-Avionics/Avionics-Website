@@ -36,20 +36,31 @@ function navbar() {
 		};
 	}, [lastScrollY]);
 	return (
-		<nav className={`navbar items-center ${showNavBar ? 'show' : 'hide'}`}>
-			<Link href={'/'} className='logo flex items-center'>
+		<nav
+			className={`navbar items-center justify-center ${
+				showNavBar ? 'show' : 'hide'
+			}`}
+		>
+			<Link
+				href={'/'}
+				className='logo flex items-center'
+			>
 				<img
 					src={star.src}
 					alt='SPA Avionics Logo'
-					className='logoImg ml-10 h-full'
+					className='logoImg h-full'
 				/>
-				<span className='logoText ml-3 mr-10 text-2xl'>
-					SP Avionics
+				<span className='logoText ml-5 mr-20 text-2xl'>
+					SP AVIONICS
 				</span>
 			</Link>
 			<div className='space-x-4'>
 				{buttons.map((button) => (
-					<Link key={button.href} href={button.href} passHref>
+					<Link
+						key={button.href}
+						href={button.href}
+						passHref
+					>
 						<NavBarButton>{button.label}</NavBarButton>
 					</Link>
 				))}

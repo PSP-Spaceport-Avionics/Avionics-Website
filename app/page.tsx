@@ -1,113 +1,15 @@
 import NavBar from './navbar/Navbar';
 
+import coverImg from '../styles/coverImg.jpeg';
+import coverImg2 from '../styles/coverImg2.jpg';
+import coverImg3 from '../styles/coverImg3.jpg';
+import coverImg4 from '../styles/coverImg4.jpg';
+import coverImg6 from '../styles/coverImg6.jpg';
+
 export default function Home() {
 	return (
 		<>
-			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
-				deserunt qui eos doloremque nesciunt voluptatibus consequuntur
-				architecto omnis adipisci libero assumenda iste placeat nisi
-				commodi, saepe alias nobis! Voluptatum, ullam?
-			</p>
-			<br></br>
-			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
-				deserunt qui eos doloremque nesciunt voluptatibus consequuntur
-				architecto omnis adipisci libero assumenda iste placeat nisi
-				commodi, saepe alias nobis! Voluptatum, ullam?
-			</p>
-			<br></br>
-			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
-				deserunt qui eos doloremque nesciunt voluptatibus consequuntur
-				architecto omnis adipisci libero assumenda iste placeat nisi
-				commodi, saepe alias nobis! Voluptatum, ullam?
-			</p>
-			<br></br>
-			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
-				deserunt qui eos doloremque nesciunt voluptatibus consequuntur
-				architecto omnis adipisci libero assumenda iste placeat nisi
-				commodi, saepe alias nobis! Voluptatum, ullam?
-			</p>
-			<br></br>
-			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
-				deserunt qui eos doloremque nesciunt voluptatibus consequuntur
-				architecto omnis adipisci libero assumenda iste placeat nisi
-				commodi, saepe alias nobis! Voluptatum, ullam?
-			</p>
-			<br></br>
-			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
-				deserunt qui eos doloremque nesciunt voluptatibus consequuntur
-				architecto omnis adipisci libero assumenda iste placeat nisi
-				commodi, saepe alias nobis! Voluptatum, ullam?
-			</p>
-			<br></br>
-			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
-				deserunt qui eos doloremque nesciunt voluptatibus consequuntur
-				architecto omnis adipisci libero assumenda iste placeat nisi
-				commodi, saepe alias nobis! Voluptatum, ullam?
-			</p>
-			<br></br>
-			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
-				deserunt qui eos doloremque nesciunt voluptatibus consequuntur
-				architecto omnis adipisci libero assumenda iste placeat nisi
-				commodi, saepe alias nobis! Voluptatum, ullam?
-			</p>
-			<br></br>
-			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
-				deserunt qui eos doloremque nesciunt voluptatibus consequuntur
-				architecto omnis adipisci libero assumenda iste placeat nisi
-				commodi, saepe alias nobis! Voluptatum, ullam?
-			</p>
-			<br></br>
-			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
-				deserunt qui eos doloremque nesciunt voluptatibus consequuntur
-				architecto omnis adipisci libero assumenda iste placeat nisi
-				commodi, saepe alias nobis! Voluptatum, ullam?
-			</p>
-			<br></br>
-			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
-				deserunt qui eos doloremque nesciunt voluptatibus consequuntur
-				architecto omnis adipisci libero assumenda iste placeat nisi
-				commodi, saepe alias nobis! Voluptatum, ullam?
-			</p>
-			<br></br>
-			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
-				deserunt qui eos doloremque nesciunt voluptatibus consequuntur
-				architecto omnis adipisci libero assumenda iste placeat nisi
-				commodi, saepe alias nobis! Voluptatum, ullam?
-			</p>
-			<br></br>
-			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
-				deserunt qui eos doloremque nesciunt voluptatibus consequuntur
-				architecto omnis adipisci libero assumenda iste placeat nisi
-				commodi, saepe alias nobis! Voluptatum, ullam?
-			</p>
-			<br></br>
-			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
-				deserunt qui eos doloremque nesciunt voluptatibus consequuntur
-				architecto omnis adipisci libero assumenda iste placeat nisi
-				commodi, saepe alias nobis! Voluptatum, ullam?
-			</p>
-			<br></br>
-			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
-				deserunt qui eos doloremque nesciunt voluptatibus consequuntur
-				architecto omnis adipisci libero assumenda iste placeat nisi
-				commodi, saepe alias nobis! Voluptatum, ullam?
-			</p>
-			<br></br>
+			<img src={coverImg.src} />
 		</>
 	);
 }

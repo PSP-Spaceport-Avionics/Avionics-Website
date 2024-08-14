@@ -20,11 +20,9 @@
 	/*border: 2px solid red;*/
 	height: 50%;
 }
-.logo:hover {
-	color: #fbc02d;
-	filter: brightness(0) saturate(100%) invert(93%) sepia(10%) saturate(5232%)
-		hue-rotate(332deg) brightness(99%) contrast(98%);
-}
 .logoImg {
-	filter: invert(100%) sepia(100%) saturate(500%) hue-rotate(180deg);
+	/*filter: brightness(0) saturate(100%) invert(93%) sepia(10%) saturate(5232%)
+		hue-rotate(332deg) brightness(99%) contrast(98%);*/
+	filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7491%)
+		hue-rotate(96deg) brightness(108%) contrast(109%);
 }
