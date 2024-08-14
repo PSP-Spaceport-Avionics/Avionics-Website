@@ -41,10 +41,7 @@ function navbar() {
 				showNavBar ? 'show' : 'hide'
 			}`}
 		>
-			<Link
-				href={'/'}
-				className='logo flex items-center'
-			>
+			<Link href={'/'} className='logo flex items-center'>
 				<img
 					src={star.src}
 					alt='SPA Avionics Logo'
@@ -56,11 +53,7 @@ function navbar() {
 			</Link>
 			<div className='space-x-4'>
 				{buttons.map((button) => (
-					<Link
-						key={button.href}
-						href={button.href}
-						passHref
-					>
+					<Link key={button.href} href={button.href} passHref>
 						<NavBarButton>{button.label}</NavBarButton>
 					</Link>
 				))}

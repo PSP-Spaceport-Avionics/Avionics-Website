@@ -4,9 +4,9 @@
 	height: 120px;
 	opacity: 85%;
 	display: flex;
-	position: fixed;
 	width: 100%;
 	transition: transform 0.3s ease-in-out;
+	position: fixed;
 }
 .show {
 	transform: translateY(0);
@@ -21,8 +21,8 @@
 	height: 50%;
 }
 .logoImg {
-	/*filter: brightness(0) saturate(100%) invert(93%) sepia(10%) saturate(5232%)
-		hue-rotate(332deg) brightness(99%) contrast(98%);*/
-	filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7491%)
-		hue-rotate(96deg) brightness(108%) contrast(109%);
+	filter: brightness(0) saturate(100%) invert(85%) sepia(56%) saturate(1892%)
+		hue-rotate(332deg) brightness(99%) contrast(98%);
+	/*filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7491%)
+		hue-rotate(96deg) brightness(108%) contrast(109%);*/
 }
