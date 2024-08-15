@@ -17,7 +17,7 @@ function NavbarLogo() {
 			className='logo flex mr-10 items-center'
 			onClick={handleClick}
 		>
-			<div className='logoText ml-5 text-2xl'>SP Avionics</div>
+			<div className='logoText ml-5'>SP AVIONICS</div>
 			<img
 				src={star.src}
 				alt='SPA Avionics Logo'
