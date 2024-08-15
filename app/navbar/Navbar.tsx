@@ -10,10 +10,10 @@ import logo from '../../styles/logo.png';
 import star from '../../styles/starburst-four-point.svg';
 
 const buttons = [
-	{ href: '/about', label: 'About' },
-	{ href: '/history', label: 'History' },
-	{ href: '/projects', label: 'Projects' },
-	{ href: '/contact', label: 'Contact' },
+	{ href: '#about', label: 'About' },
+	{ href: '#history', label: 'History' },
+	{ href: '#projects', label: 'Projects' },
+	{ href: '#contact', label: 'Contact' },
 ];
 
 function navbar() {
@@ -39,21 +39,23 @@ function navbar() {
 		<nav
 			className={`navbar items-center justify-center ${
 				showNavBar ? 'show' : 'hide'
-			}`}
-		>
-			<Link href={'/'} className='logo flex items-center'>
+			}`}>
+			<Link
+				href={'/'}
+				className='logo flex mr-20 items-center'>
+				<div className='logoText ml-5 text-2xl'>SP AVIONICS</div>
 				<img
 					src={star.src}
 					alt='SPA Avionics Logo'
 					className='logoImg h-full'
 				/>
-				<span className='logoText ml-5 mr-20 text-2xl'>
-					SP AVIONICS
-				</span>
 			</Link>
 			<div className='space-x-4'>
 				{buttons.map((button) => (
-					<Link key={button.href} href={button.href} passHref>
+					<Link
+						key={button.href}
+						href={button.href}
+						passHref>
 						<NavBarButton>{button.label}</NavBarButton>
 					</Link>
 				))}
