@@ -1,15 +1,20 @@
+'use client';
 import Home from './home/Home';
-
+import About from './about/About';
+import ScrollLogic from './ScrollLogic';
 export default function Page() {
 	return (
 		<div>
-			<Home />
 			<div>
-				<section id='about'>Hello World</section>
-				<section id='history'>Goodbye World</section>
-				<section id='projects'>jjj</section>
-				<section id='contact'>zzz</section>
+				<section id='home'>
+					<Home />
+				</section>
+				<About />
+				<section id='history'>History</section>
+				<section id='projects'>Projects</section>
+				<section id='contact'>Contact</section>
 			</div>
+			<ScrollLogic />
 		</div>
 	);
 }

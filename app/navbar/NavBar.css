@@ -32,11 +32,11 @@
 	justify-content: center;
 }
 .logoImg {
-	filter: brightness(0) saturate(100%) invert(85%) sepia(56%) saturate(1892%)
-		hue-rotate(332deg) brightness(99%) contrast(98%);
-	/*filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7491%)
-		hue-rotate(96deg) brightness(108%) contrast(109%);*/
-	transition: transform 0.5s ease-in-out;
+	/*filter: brightness(0) saturate(100%) invert(85%) sepia(56%) saturate(1892%)
+		hue-rotate(332deg) brightness(99%) contrast(98%);*/
+	filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7491%)
+		hue-rotate(96deg) brightness(108%) contrast(109%);
+	transition: transform 0.3s ease-in-out;
 }
 .logoText:hover ~ .logoImg,
 .logoImg:hover {

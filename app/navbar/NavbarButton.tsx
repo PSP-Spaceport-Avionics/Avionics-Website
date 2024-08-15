@@ -16,7 +16,7 @@ const CustomButton: React.FC<NavBarButtonProps> = ({ children }) => {
 				color: 'secondary.light',
 				'&:hover': {
 					color: 'primary.main',
-					backgroundColor: 'black',
+					backgroundColor: 'transparent',
 				},
 				position: 'relative',
 				'&::after': {
@@ -29,7 +29,7 @@ const CustomButton: React.FC<NavBarButtonProps> = ({ children }) => {
 					backgroundColor: 'currentColor',
 					transform: 'scaleX(0)',
 					transformOrigin: 'bottom left',
-					transition: 'transform 0.15s ease-in-out',
+					transition: 'transform 0.25s ease-in-out',
 				},
 				'&:hover::after': {
 					transform: 'scaleX(1)',

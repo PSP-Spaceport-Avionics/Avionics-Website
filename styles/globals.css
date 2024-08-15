@@ -17,12 +17,21 @@
 }
 
 body {
-	color: black;
-	background: white;
+	color: white;
+	background: black;
 }
 
 @layer utilities {
 	.text-balance {
 		text-wrap: balance;
 	}
+}
+
+section {
+	height: 100vh;
+	border: 2px solid red;
+}
+
+html {
+	scroll-behavior: smooth;
 }

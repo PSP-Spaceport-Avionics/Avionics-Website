@@ -1,22 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBarButton from './NavbarButton';
-import Link from 'next/link';
-import { Button } from '@mui/material';
-import { useState, useEffect } from 'react';
-
+import NavbarLogo from './NavbarLogo';
 import './Navbar.css';
 
-import logo from '../../styles/logo.png';
-import star from '../../styles/starburst-four-point.svg';
-
 const buttons = [
-	{ href: '#about', label: 'About' },
-	{ href: '#history', label: 'History' },
-	{ href: '#projects', label: 'Projects' },
-	{ href: '#contact', label: 'Contact' },
+	{ href: 'about', label: 'About' },
+	{ href: 'history', label: 'History' },
+	{ href: 'projects', label: 'Projects' },
+	{ href: 'contact', label: 'Contact' },
 ];
 
-function navbar() {
+function Navbar() {
 	const [showNavBar, setShowNavbar] = useState(true);
 	const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -35,33 +29,38 @@ function navbar() {
 			window.removeEventListener('scroll', controlNavbar);
 		};
 	}, [lastScrollY]);
+
+	const handleNavClick = (
+		e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+		href: string
+	) => {
+		e.preventDefault();
+		const targetElement = document.getElementById(href);
+		if (targetElement) {
+			targetElement.scrollIntoView({ behavior: 'smooth' });
+		}
+	};
+
 	return (
 		<nav
 			className={`navbar items-center justify-center ${
 				showNavBar ? 'show' : 'hide'
-			}`}>
-			<Link
-				href={'/'}
-				className='logo flex mr-20 items-center'>
-				<div className='logoText ml-5 text-2xl'>SP AVIONICS</div>
-				<img
-					src={star.src}
-					alt='SPA Avionics Logo'
-					className='logoImg h-full'
-				/>
-			</Link>
+			}`}
+		>
+			<NavbarLogo />
 			<div className='space-x-4'>
 				{buttons.map((button) => (
-					<Link
+					<a
 						key={button.href}
-						href={button.href}
-						passHref>
+						href={`#${button.href}`}
+						onClick={(e) => handleNavClick(e, button.href)}
+					>
 						<NavBarButton>{button.label}</NavBarButton>
-					</Link>
+					</a>
 				))}
 			</div>
 		</nav>
 	);
 }
 
-export default navbar;
+export default Navbar;
