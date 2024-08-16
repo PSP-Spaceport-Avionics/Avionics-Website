@@ -21,27 +21,52 @@
 	flex-direction: row-reverse;
 	width: fit-content;
 	height: 60px;
+	padding-inline: 20px;
 }
 .logoText {
 	/*border: 2px solid red;*/
 	text-align: center;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	transition: color 0.3s ease-in-out;
+	color: #fbc02d;
+}
+.logoText:hover {
+	color: #fbc02d;
+}
+.SPA {
 	font-size: 40px;
-	font-weight: 100;
+}
+.avionics {
+	margin-top: -15px;
+	font-size: 18px;
 }
 .logoImg {
-	/*filter: brightness(0) saturate(100%) invert(85%) sepia(56%) saturate(1892%)
-		hue-rotate(332deg) brightness(99%) contrast(98%);*/
-	filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7491%)
-		hue-rotate(96deg) brightness(108%) contrast(109%);
-	transition: transform 0.3s ease-in-out;
-	height: 100%;
+	height: 60px;
+	width: 60px;
 	/*border: 2px solid red;*/
 }
-.logoText:hover ~ .logoImg,
-.logoImg:hover {
-	/*transform: rotate(180deg);*/
-	content: '';
+.ship {
+	fill: white;
+}
+.flame {
+	transform-origin: center;
+	transition: transform 0.3s ease-in-out;
+	fill: #fbc02d;
+}
+.logo:hover .flame {
+	animation: pulseFlame 0.2s infinite ease-in-out;
+}
+@keyframes pulseFlame {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.05);
+	}
+	100% {
+		transform: scale(1);
+	}
 }

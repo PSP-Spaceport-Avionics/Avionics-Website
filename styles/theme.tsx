@@ -1,7 +1,7 @@
 import { createTheme, darken } from '@mui/material/styles';
 import { yellow, grey } from '@mui/material/colors';
 
-import '@fontsource/roboto/100.css';
+//remember to npm install @fontsource/roboto
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
