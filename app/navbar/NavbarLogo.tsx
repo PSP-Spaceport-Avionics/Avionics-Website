@@ -2,7 +2,9 @@ import Link from 'next/link';
 import React from 'react';
 import './Navbar.css';
 
-import star from '../../public/Images/starburst-four-point.svg';
+import star from '../../public/svg/starburst-four-point.svg';
+import rocket from '../../public/svg/rocket.svg';
+import logo from '../../public/images/logo1.png';
 
 const handleClick = (e: { preventDefault: () => void }) => {
 	e.preventDefault();
@@ -15,13 +17,12 @@ function NavbarLogo() {
 		<Link
 			href={'/'}
 			className='logo flex mr-10 items-center'
-			onClick={handleClick}
-		>
-			<div className='logoText ml-5'>SP AVIONICS</div>
+			onClick={handleClick}>
+			<div className='logoText font-extralight'>SPA Avionics</div>
 			<img
-				src={star.src}
+				src={rocket.src}
 				alt='SPA Avionics Logo'
-				className='logoImg h-full'
+				className='logoImg'
 			/>
 		</Link>
 	);

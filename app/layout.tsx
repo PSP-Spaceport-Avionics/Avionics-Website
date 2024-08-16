@@ -1,11 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 
 import ClientLayout from '../styles/ClientLayout';
+import CssBaseline from '@mui/material/CssBaseline';
 
 import '../styles/globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
 	title: 'Avionics Website',
@@ -19,7 +17,8 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={inter.className}>
+			<body>
+				<CssBaseline />
 				<ClientLayout>{children}</ClientLayout>
 			</body>
 		</html>
