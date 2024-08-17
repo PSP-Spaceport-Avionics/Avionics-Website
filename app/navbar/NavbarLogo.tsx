@@ -12,19 +12,27 @@ const handleClick = (e: { preventDefault: () => void }) => {
 	window.scrollTo({ top: 0, behavior: 'smooth' });
 	window.history.pushState({}, '', '/');
 };
-
+//AVIONICS THEN SPA
 function NavbarLogo() {
 	return (
 		<Link
 			href={'/'}
 			className='logo flex mr-10 items-center'
-			onClick={handleClick}
-		>
+			onClick={handleClick}>
 			<div className='logoText -ml-2'>
+				<div className='avionics font-thin tracking-normal'>
+					AVIONICS
+				</div>
 				<div className='SPA font-bold tracking-wide'>SPA</div>
-				<div className='avionics font-thin tracking-wide'>AVIONICS</div>
 			</div>
-			<ReactSVG className='logoImg' src='/svg/rocket.svg' />
+			{/*<ReactSVG
+				className='logoImg'
+				src='/svg/rocket.svg'
+			/> */}
+			<ReactSVG
+				className='logoImg2'
+				src='/svg/rocket2.svg'
+			/>
 		</Link>
 	);
 }

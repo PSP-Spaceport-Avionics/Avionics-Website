@@ -57,7 +57,13 @@
 	fill: #fbc02d;
 }
 .logo:hover .flame {
-	animation: pulseFlame 0.2s infinite ease-in-out;
+	/*animation: pulseFlame 0.2s infinite ease-in-out;*/
+	content: '';
+}
+.logoImg2 {
+	height: 60px;
+	width: 60px;
+	fill: white;
 }
 @keyframes pulseFlame {
 	0% {
