@@ -37,11 +37,11 @@
 	color: #fbc02d;
 }
 .SPA {
-	font-size: 40px;
+	margin-top: -15px;
+	font-size: 15px;
 }
 .avionics {
-	margin-top: -15px;
-	font-size: 18px;
+	font-size: 40px;
 }
 .logoImg {
 	height: 60px;

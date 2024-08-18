@@ -9,6 +9,7 @@ interface NavBarButtonProps {
 const CustomButton: React.FC<NavBarButtonProps> = ({ children }) => {
 	return (
 		<Button
+			className='font-extralight tracking-wide'
 			variant='text'
 			disableElevation
 			disableRipple
@@ -39,8 +40,7 @@ const CustomButton: React.FC<NavBarButtonProps> = ({ children }) => {
 					transform: 'scaleX(0)',
 					transformOrigin: 'bottom right',
 				},
-			}}
-		>
+			}}>
 			{children}
 		</Button>
 	);
