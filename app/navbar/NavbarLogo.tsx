@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ReactSVG } from 'react-svg';
 import './Navbar.css';
 
@@ -9,14 +9,16 @@ import logo from '../../public/images/logo1.png';
 
 const handleClick = (e: { preventDefault: () => void }) => {
 	e.preventDefault();
-	window.scrollTo({ top: 0, behavior: 'smooth' });
 	window.history.pushState({}, '', '/');
+	window.scrollTo({ top: 0, behavior: 'smooth' });
+
+	console.log(window.scrollY);
 };
 //AVIONICS THEN SPA
 function NavbarLogo() {
 	return (
 		<Link
-			href={'/'}
+			href={'#'}
 			className='logo flex mr-10 items-center'
 			onClick={handleClick}>
 			<div className='logoText -ml-2'>

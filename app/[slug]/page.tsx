@@ -1,23 +1,25 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Page from '../page';
 
 const DynamicPage = () => {
 	const pathname = usePathname();
+	const isFirstRender = useRef(true);
 
 	useEffect(() => {
-		console.log(pathname);
-		const pathSegments = pathname.split('/').filter(Boolean);
-		const slug = pathSegments[0];
+		if (isFirstRender.current) {
+			isFirstRender.current = false;
 
-		console.log('Slug value:', slug);
+			const pathSegments = pathname.split('/').filter(Boolean);
+			const slug = pathSegments[0];
 
-		if (slug) {
-			const targetElement = document.getElementById(slug);
-			if (targetElement) {
-				targetElement.scrollIntoView({ behavior: 'smooth' });
+			if (slug) {
+				const targetElement = document.getElementById(slug);
+				if (targetElement) {
+					targetElement.scrollIntoView({ behavior: 'smooth' });
+				}
 			}
 		}
 	}, [pathname]);
