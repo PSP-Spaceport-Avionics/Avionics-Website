@@ -10,9 +10,11 @@ import Footer from '../app/footer/Footer';
 const ClientLayout = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<ThemeProvider theme={theme}>
-			<NavBar />
-			{children}
-			<Footer />
+			<div>
+				<NavBar />
+				<main className='flex-grow'>{children}</main>
+				<Footer />
+			</div>
 		</ThemeProvider>
 	);
 };

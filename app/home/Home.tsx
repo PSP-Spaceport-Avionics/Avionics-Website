@@ -10,11 +10,14 @@ import rocket from '../../styles/rocket.jpg';
 
 export default function Home() {
 	return (
-		<div className='videoContainer'>
-			{/*<video className='video' autoPlay loop muted playsInline>
+		<section id='home'>
+			<div className='videoContainer'>
+				{/*<video className='video' autoPlay loop muted playsInline>
 				<source src='/videos/staticFire.mov' type='video/mp4 ' />
 				Your browser does not support the video tag.
 			</video> */}
-		</div>
+				Home
+			</div>
+		</section>
 	);
 }

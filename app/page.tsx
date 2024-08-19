@@ -1,14 +1,18 @@
 'use client';
+
 import Home from './home/Home';
 import About from './about/About';
 import ScrollLogic from './ScrollLogic';
+import SideScroller from './side-scroller/sideScroller';
+
+import './page.css';
+
 export default function Page() {
 	return (
-		<div>
-			<div>
-				<section id='home'>
-					<Home />
-				</section>
+		<div className='parentContainer'>
+			<SideScroller />
+			<div className='mainContent'>
+				<Home />
 				<About />
 				<section id='history'>History</section>
 				<section id='projects'>Projects</section>
