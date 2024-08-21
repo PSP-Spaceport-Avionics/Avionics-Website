@@ -6,6 +6,7 @@ import coverImg3 from '../../styles/coverImg3.jpg';
 import coverImg4 from '../../styles/coverImg4.jpg';
 import coverImg6 from '../../styles/coverImg6.jpg';
 import rocket from '../../styles/rocket.jpg';
+import milkyway from '/public/images/milkyway.jpg';
 //need to update later?
 
 export default function Home() {
@@ -16,8 +17,8 @@ export default function Home() {
 				<source src='/videos/staticFire.mov' type='video/mp4 ' />
 				Your browser does not support the video tag.
 			</video> */}
-				Home
 			</div>
+			<img src={milkyway.src} />
 		</section>
 	);
 }
