@@ -9,12 +9,13 @@ interface NavBarButtonProps {
 const CustomButton: React.FC<NavBarButtonProps> = ({ children }) => {
 	return (
 		<Button
-			className='font-extralight tracking-wide'
 			variant='text'
 			disableElevation
 			disableRipple
 			sx={{
 				color: 'secondary.light',
+				fontWeight: 400,
+				letterSpacing: '.025em',
 				'&:hover': {
 					color: 'primary.main',
 					backgroundColor: 'transparent',

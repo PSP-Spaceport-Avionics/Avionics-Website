@@ -6,6 +6,7 @@ import './Navbar.css';
 import star from '../../public/svg/starburst-four-point.svg';
 import rocket from '../../public/svg/rocket.svg';
 import logo from '../../public/images/logo1.png';
+import ReactLogo from '../../public/svg/rocket.svg';
 
 const handleClick = (e: { preventDefault: () => void }) => {
 	e.preventDefault();
@@ -22,17 +23,10 @@ function NavbarLogo() {
 			className='logo flex mr-10 items-center'
 			onClick={handleClick}>
 			<div className='logoText -ml-2'>
-				<div className='avionics font-extralight tracking-wide uppercase'>
-					avionics
-				</div>
-				<div className='SPA font-extralight tracking-wide uppercase'>
-					Spaceport America
-				</div>
+				<div className='avionics tracking-wide'>AVIONICS</div>
+				<div className='SPA tracking-wide'>SPACEPORT AMERICA</div>
 			</div>
-			<ReactSVG
-				className='logoImg'
-				src='/svg/rocket.svg'
-			/>
+			<ReactLogo className='logoImg' />
 			{/*<ReactSVG
 				className='logoImg2'
 				src='/svg/rocket2.svg'

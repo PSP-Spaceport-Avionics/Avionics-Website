@@ -1,10 +1,35 @@
-.imageContainer {
-	content: '';
+.home {
+	content: 'none';
 }
-.image {
-	width: 100vw;
-	height: auto;
-	object-fit: cover;
+.backgroundImg {
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.backgroundImg::before {
+	content: '';
+	position: absolute;
+	background-image: url('/images/Spaceport-America-Sunset.jpg');
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: bottom;
+}
+.backgroundImg::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	animation-delay: 2s;
+	animation: darken 1s linear forwards;
+	z-index: 1;
 }
 .videoContainer {
 	height: 100vh;
@@ -15,4 +40,54 @@
 	position: relative;
 	z-index: -1;
 	object-fit: cover;
+}
+.welcome {
+	color: white;
+	text-align: center;
+	width: 100%;
+	border: 2px solid blue;
+	z-index: 2;
+	animation: floatDown 1s ease-out forwards;
+	position: absolute; /* Ensure the arrow starts from the bottom */
+	top: 0;
+}
+.arrow {
+	color: white;
+	text-align: center;
+	width: 100%;
+	border: 2px solid blue;
+	z-index: 2;
+	animation: floatUp 1s ease-out forwards;
+	position: absolute; /* Ensure the arrow starts from the bottom */
+	bottom: 0;
+}
+@keyframes floatDown {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(40vh);
+	}
+}
+@keyframes floatUp {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-40vh);
+	}
+}
+
+@keyframes darken {
+	0% {
+		background-color: rgba(0, 0, 0, 0); /* Semi-transparent black overlay */
+	}
+	100% {
+		background-color: rgba(
+			0,
+			0,
+			0,
+			0.5
+		); /* Semi-transparent black overlay */
+	}
 }

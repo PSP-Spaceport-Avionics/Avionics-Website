@@ -13,6 +13,7 @@ const buttons = [
 function Navbar() {
 	const [showNavBar, setShowNavbar] = useState(true);
 	const [lastScrollY, setLastScrollY] = useState(0);
+	const [isNavBarLoaded, setIsNavBarLiaded] = useState(false);
 
 	const controlNavbar = () => {
 		if (window.scrollY > lastScrollY) {
@@ -22,6 +23,13 @@ function Navbar() {
 		}
 		setLastScrollY(window.scrollY);
 	};
+	useEffect(() => {
+		const navbarElement = document.querySelector('.navbar');
+
+		if (navbarElement instanceof HTMLElement) {
+			setIsNavBarLiaded(true);
+		}
+	}, []);
 
 	useEffect(() => {
 		window.addEventListener('scroll', controlNavbar);
@@ -45,16 +53,14 @@ function Navbar() {
 		<nav
 			className={`navbar items-center justify-center ${
 				showNavBar ? 'show' : 'hide'
-			}`}
-		>
+			} ${isNavBarLoaded ? 'loaded' : ''}`}>
 			<NavbarLogo />
 			<div className='space-x-4'>
 				{buttons.map((button) => (
 					<a
 						key={button.href}
 						href={`#${button.href}`}
-						onClick={(e) => handleNavClick(e, button.href)}
-					>
+						onClick={(e) => handleNavClick(e, button.href)}>
 						<NavBarButton>{button.label}</NavBarButton>
 					</a>
 				))}

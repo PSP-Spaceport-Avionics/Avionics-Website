@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Head from 'next/head';
 
 import ClientLayout from '../styles/ClientLayout';
 import CssBaseline from '@mui/material/CssBaseline';
