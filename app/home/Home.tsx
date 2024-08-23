@@ -1,28 +1,75 @@
 import './Home.css';
 
-import coverImg from '../../styles/coverImg.jpeg';
-import coverImg2 from '../../styles/coverImg2.jpg';
-import coverImg3 from '../../styles/coverImg3.jpg';
-import coverImg4 from '../../styles/coverImg4.jpg';
-import coverImg6 from '../../styles/coverImg6.jpg';
-import rocket from '../../styles/rocket.jpg';
-import milkyway from '/images/milkyway.jpg';
-import spa from '/public/images/spa.jpg';
-import sunset from '/public/images/Spaceport-America-Sunset.jpg';
-//need to update later?
+import ReactLogo from '../../public/svg/down.svg';
+
+import KeyboardDoubleArrowDownRoundedIcon from '@mui/icons-material/KeyboardDoubleArrowDownRounded';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
+	const [welcomeText, setWelcomeText] = useState('');
+	const fullWelcomeText = 'Welcome';
+
+	const [subText, setSubText] = useState('');
+	const fullSubText = 'to Avionics @ Spaceport America';
+
+	const [isTypingComplete, setIsTypingComplete] = useState(false);
+
+	useEffect(() => {
+		let index = 0;
+
+		function typeWelcomeText() {
+			if (index < fullWelcomeText.length) {
+				setWelcomeText(fullWelcomeText.substring(0, index + 1));
+				index++;
+				setTimeout(typeWelcomeText, 75);
+			} else {
+				setIsTypingComplete(true);
+				setTimeout(typeSubText, 500);
+			}
+		}
+
+		function typeSubText() {
+			index = 0;
+			function typeCharacter() {
+				if (index < fullSubText.length) {
+					setSubText(fullSubText.substring(0, index + 1));
+					index++;
+					setTimeout(typeCharacter, 25);
+				}
+			}
+			typeCharacter();
+		}
+
+		typeWelcomeText();
+	}, []);
+	const handleClick = (
+		e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+	) => {
+		e.preventDefault();
+		const targetElement = document.getElementById('about');
+		if (targetElement) {
+			targetElement.scrollIntoView({ behavior: 'smooth' });
+		}
+	};
 	return (
 		<section id='home'>
-			{/*<div className='videoContainer'>
-				<video className='video' autoPlay loop muted playsInline>
-				<source src='/videos/staticFire.mov' type='video/mp4 ' />
-				Your browser does not support the video tag.
-			</video>
-			</div> */}
 			<div className='backgroundImg'>
-				<div className='welcome'>Welcome</div>
-				<div className='arrow'>Arrow</div>
+				<p
+					className={`welcomeTxt text-8xl font-verylight -mt-40 ${
+						isTypingComplete ? '' : 'cursor'
+					}`}>
+					{welcomeText}
+				</p>
+				<p className='subTxt cursor text-2xl font-extralight mt-4'>
+					{subText}
+				</p>
+				<a
+					className='arrowContainer'
+					href={'about'}
+					onClick={handleClick}>
+					<ReactLogo className='arrow' />
+					<ReactLogo className='arrow -mt-4' />
+				</a>
 			</div>
 		</section>
 	);

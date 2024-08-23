@@ -23,8 +23,12 @@ function NavbarLogo() {
 			className='logo flex mr-10 items-center'
 			onClick={handleClick}>
 			<div className='logoText -ml-2'>
-				<div className='avionics tracking-wide'>AVIONICS</div>
-				<div className='SPA tracking-wide'>SPACEPORT AMERICA</div>
+				<div className='avionics tracking-wide font-verylight'>
+					AVIONICS
+				</div>
+				<div className='SPA tracking-wide font-verylight'>
+					SPACEPORT AMERICA
+				</div>
 			</div>
 			<ReactLogo className='logoImg' />
 			{/*<ReactSVG

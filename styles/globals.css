@@ -18,7 +18,8 @@
 
 body {
 	color: white;
-	background: black;
+	background-color: black;
+	@apply font-verylight;
 }
 
 @layer utilities {
@@ -29,10 +30,11 @@ body {
 
 section {
 	height: 100vh;
-	border: 2px solid red;
+	/*border: 2px solid red;*/
 }
 
 html {
 	scroll-behavior: smooth;
 	overflow-y: scroll;
+	background-color: black;
 }
