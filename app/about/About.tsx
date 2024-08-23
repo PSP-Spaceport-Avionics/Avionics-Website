@@ -2,16 +2,20 @@ import React from 'react';
 
 import './About.css';
 
-import rocket from '../../public/images/rocket.jpg';
+import Image from 'next/image';
 
 function About() {
 	return (
 		<section
 			id='about'
 			className='company-overview px-8 md:px-16 lg:px-32'>
-			<img
-				src={rocket.src}
+			<Image
+				src='/images/rocket.jpg'
+				alt='Rocket'
 				className='rocket my-10 w-60 h-auto rounded-lg'
+				width={240}
+				height={600}
+				layout='intrinsic'
 			/>
 			<div className='text-center mb-12'>
 				<h2 className='text-4xl font-bold text-white'>Who We Are</h2>
