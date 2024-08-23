@@ -7,7 +7,7 @@ const buttons = [
 	{ href: 'about', label: 'About' },
 	{ href: 'history', label: 'History' },
 	{ href: 'projects', label: 'Projects' },
-	{ href: 'contact', label: 'Contact' },
+	//{ href: 'contact', label: 'Contact' },
 ];
 
 function Navbar() {

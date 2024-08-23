@@ -19,7 +19,6 @@ export default function Page() {
 				<About />
 				<History />
 				<Projects />
-				<Contact />
 			</div>
 			<ScrollLogic />
 		</div>

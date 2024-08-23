@@ -24,6 +24,10 @@ const config: Config = {
 			letterSpacing: {
 				wide: '.025em',
 			},
+			colors: {
+				primary: '#fbc02d',
+				secondary: '#1e90ff',
+			},
 		},
 	},
 	plugins: [],
