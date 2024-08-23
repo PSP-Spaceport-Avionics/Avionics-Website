@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 function Projects() {
 	const projects = [
@@ -22,8 +23,8 @@ function Projects() {
 			image: '/images/project-gamma.jpg',
 			link: '/projects/gamma',
 		},
-		// Add more projects as needed
 	];
+
 	return (
 		<div>
 			<section
@@ -34,7 +35,7 @@ function Projects() {
 						Featured Projects
 					</h2>
 					<p className='mt-4 text-lg max-w-2xl mx-auto text-gray-300'>
-						Discover the diverse range of projects we've
+						Discover the diverse range of projects we&apos;ve
 						successfully completed, each contributing to our mission
 						of innovation and excellence.
 					</p>
@@ -45,10 +46,13 @@ function Projects() {
 						<div
 							key={index}
 							className='project-card bg-gray-800 p-6 rounded-lg shadow-lg'>
-							<img
+							<Image
 								src={project.image}
 								alt={project.title}
 								className='w-full h-48 object-cover rounded-t-lg mb-4'
+								width={500}
+								height={300}
+								layout='responsive'
 							/>
 							<h3 className='text-2xl font-bold mb-2'>
 								{project.title}
