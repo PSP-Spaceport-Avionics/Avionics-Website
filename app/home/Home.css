@@ -14,7 +14,7 @@
 .backgroundImg::before {
 	content: '';
 	position: absolute;
-	background-image: url('/images/Spaceport-America-Sunset.jpg');
+	background-image: url('/images/sunset.jpg');
 	background-repeat: no-repeat;
 	width: 100%;
 	height: 100%;
