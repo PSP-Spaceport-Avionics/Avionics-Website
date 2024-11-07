@@ -1,5 +1,6 @@
 .home {
 	content: 'none';
+	height: 100vh;
 }
 .backgroundImg {
 	position: relative;
@@ -36,10 +37,12 @@
 .welcomeTxt {
 	z-index: 2;
 	justify-content: center;
+	color: white;
 }
 .subTxt {
 	z-index: 2;
 	justify-content: flex-start;
+	color: white;
 }
 .arrowContainer {
 	z-index: 2;

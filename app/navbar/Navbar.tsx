@@ -14,6 +14,8 @@ function Navbar() {
 	const [showNavBar, setShowNavbar] = useState(true);
 	const [lastScrollY, setLastScrollY] = useState(0);
 	const [isNavBarLoaded, setIsNavBarLiaded] = useState(false);
+	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+	const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
 
 	const controlNavbar = () => {
 		if (window.scrollY > lastScrollY) {
@@ -23,6 +25,18 @@ function Navbar() {
 		}
 		setLastScrollY(window.scrollY);
 	};
+
+	const toggleDropdown = () => {
+		setIsDropdownOpen(!isDropdownOpen);
+	};
+
+	const updateView = () => {
+		setIsMobileView(window.innerWidth <= 768);
+		if (window.innerWidth > 768) {
+			setIsDropdownOpen(false); // Close dropdown if resizing back to desktop view
+		}
+	};
+
 	useEffect(() => {
 		const navbarElement = document.querySelector('.navbar');
 
@@ -33,11 +47,22 @@ function Navbar() {
 
 	useEffect(() => {
 		window.addEventListener('scroll', controlNavbar);
+		window.addEventListener('resize', updateView);
 		return () => {
 			window.removeEventListener('scroll', controlNavbar);
+			window.removeEventListener('resize', updateView);
 		};
 	}, [lastScrollY]);
-
+	useEffect(() => {
+		// Toggle 'no-scroll' class on both html and body elements
+		if (isDropdownOpen) {
+			document.body.classList.add('no-scroll');
+			document.documentElement.classList.add('no-scroll');
+		} else {
+			document.body.classList.remove('no-scroll');
+			document.documentElement.classList.remove('no-scroll');
+		}
+	}, [isDropdownOpen]);
 	const handleNavClick = (
 		e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
 		href: string
@@ -47,6 +72,7 @@ function Navbar() {
 		if (targetElement) {
 			targetElement.scrollIntoView({ behavior: 'smooth' });
 		}
+		setIsDropdownOpen(false); // Close dropdown after click
 	};
 
 	return (
@@ -55,16 +81,40 @@ function Navbar() {
 				showNavBar ? 'show' : 'hide'
 			} ${isNavBarLoaded ? 'loaded' : ''}`}>
 			<NavbarLogo />
-			<div className='space-x-4'>
-				{buttons.map((button) => (
-					<a
-						key={button.href}
-						href={`#${button.href}`}
-						onClick={(e) => handleNavClick(e, button.href)}>
-						<NavBarButton>{button.label}</NavBarButton>
-					</a>
-				))}
-			</div>
+			{isMobileView ? (
+				<div className='dropdown'>
+					<button
+						className='dropdown-toggle'
+						onClick={toggleDropdown}>
+						Menu
+					</button>
+					{isDropdownOpen && (
+						<div className='dropdown-menu'>
+							{buttons.map((button) => (
+								<a
+									key={button.href}
+									href={`#${button.href}`}
+									onClick={(e) =>
+										handleNavClick(e, button.href)
+									}>
+									<NavBarButton>{button.label}</NavBarButton>
+								</a>
+							))}
+						</div>
+					)}
+				</div>
+			) : (
+				<div className='space-x-4'>
+					{buttons.map((button) => (
+						<a
+							key={button.href}
+							href={`#${button.href}`}
+							onClick={(e) => handleNavClick(e, button.href)}>
+							<NavBarButton>{button.label}</NavBarButton>
+						</a>
+					))}
+				</div>
+			)}
 		</nav>
 	);
 }

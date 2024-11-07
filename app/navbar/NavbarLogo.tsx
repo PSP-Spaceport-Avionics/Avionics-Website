@@ -20,7 +20,7 @@ function NavbarLogo() {
 	return (
 		<Link
 			href={'#'}
-			className='logo flex mr-10 items-center'
+			className='logo flex mr-7 items-center'
 			onClick={handleClick}>
 			<div className='logoText -ml-2'>
 				<div className='avionics tracking-wide font-verylight'>
