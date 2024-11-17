@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 function ScrollLogic() {
 	const [sections, setSections] = useState<Element[]>([]);
-	const sectionList = ['/', '/about', '/history', '/projects', '/contact'];
+	const sectionList = ['/', '/overview', '/projects', '/contact'];
 	let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
 
 	useEffect(() => {

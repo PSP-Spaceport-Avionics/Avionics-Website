@@ -46,7 +46,7 @@ export default function Home() {
 		e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
 	) => {
 		e.preventDefault();
-		const targetElement = document.getElementById('about');
+		const targetElement = document.getElementById('overview');
 		if (targetElement) {
 			targetElement.scrollIntoView({ behavior: 'smooth' });
 		}
@@ -65,7 +65,7 @@ export default function Home() {
 				</p>
 				<a
 					className='arrowContainer'
-					href={'about'}
+					href={'overview'}
 					onClick={handleClick}>
 					<ReactLogo className='arrow' />
 					<ReactLogo className='arrow -mt-4' />

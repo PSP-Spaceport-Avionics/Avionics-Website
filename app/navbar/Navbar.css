@@ -1,5 +1,5 @@
 .navbar {
-	background-color: black;
+	background-color: #0f0c11;
 	/*border: 2px solid red;*/
 	height: 120px;
 	display: flex;
@@ -10,6 +10,7 @@
 	visibility: hidden;
 	align-items: center;
 	justify-content: center;
+	opacity: 1;
 }
 .navbar.loaded {
 	visibility: visible;
@@ -89,13 +90,12 @@
 }
 
 .dropdown-toggle {
-	background-color: #333;
 	color: white;
 	border: none;
 	cursor: pointer;
-	font-size: 1.2em;
+	font-size: 2rem;
 	z-index: 12;
-	border: 2px solid red;
+	/*border: 2px solid red;*/
 }
 
 .dropdown-menu {
@@ -125,10 +125,6 @@
 	width: 100%;
 	display: flex;
 	justify-content: center;
-}
-
-.dropdown-menu a:hover {
-	background-color: #444;
 }
 
 @media (max-width: 768px) {

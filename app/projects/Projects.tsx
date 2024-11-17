@@ -1,75 +1,122 @@
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 function Projects() {
+	const fadeIn = {
+		hidden: { opacity: 0 },
+		visible: { opacity: 1 },
+	};
+
 	const projects = [
 		{
-			title: 'Project Alpha',
+			title: 'Flight Computer',
 			description:
-				'A groundbreaking project that revolutionized our industry.',
-			image: '/images/project-alpha.jpg',
-			link: '/projects/alpha',
+				'An SRAD flight computer system delivering real-time telemetry, reliable data logging, and advanced flight control to optimize rocket performance.',
+			image: '/images/no-image.jpg',
+			link: 'https://github.com/PSP-Spaceport-Avionics/Flight-Computer',
 		},
 		{
-			title: 'Project Beta',
-			description: 'An innovative solution to complex challenges.',
-			image: '/images/project-beta.jpg',
-			link: '/projects/beta',
+			title: 'Airbrake System',
+			description:
+				'A precision-engineered airbrake system ensuring controlled descent and achieving target altitudes with unparalleled accuracy.',
+			image: '/images/no-image.jpg',
+			link: 'https://github.com/PSP-Spaceport-Avionics/Dragster',
 		},
 		{
-			title: 'Project Gamma',
+			title: 'Ground Station',
 			description:
-				'A cutting-edge project that pushed the boundaries of technology.',
-			image: '/images/project-gamma.jpg',
-			link: '/projects/gamma',
+				'A ground station with a user-friendly interface for real-time telemetry monitoring, data visualization, and seamless flight analysis.',
+			image: '/images/no-image.jpg',
+			link: 'https://github.com/PSP-Spaceport-Avionics/Ground-Station',
 		},
 	];
 
 	return (
-		<div>
-			<section
-				id='projects'
-				className='projects-section py-16 px-8 md:px-16 lg:px-32'>
-				<div className='text-center mb-12'>
-					<h2 className='text-4xl font-bold text-white'>
-						Featured Projects
-					</h2>
-					<p className='mt-4 text-lg max-w-2xl mx-auto text-gray-300'>
-						Discover the diverse range of projects we&apos;ve
-						successfully completed, each contributing to our mission
-						of innovation and excellence.
-					</p>
-				</div>
+		<motion.section
+			id='projects'
+			className='bg-white text-gray-800 py-16 px-6 md:px-12 lg:px-16'
+			initial='hidden'
+			whileInView='visible'
+			viewport={{ once: true }}
+			variants={fadeIn}
+			transition={{ duration: 0.8 }}>
+			<div className='max-w-6xl mx-auto'>
+				{/* Heading Section */}
+				<motion.div
+					initial='hidden'
+					whileInView='visible'
+					viewport={{ once: true }}
+					variants={fadeIn}
+					transition={{ duration: 0.8 }}>
+					<div className='text-left mb-12'>
+						<h2
+							className='text-6xl font-extrabold mb-6'
+							style={{ color: '#18141c' }}>
+							Projects
+						</h2>
+						<p
+							className='text-xl leading-relaxed max-w-full'
+							style={{ color: '#4c4c4c' }}>
+							Explore our current projects, ranging from our SRAD
+							flight computer to our custom ground station.
+						</p>
+					</div>
+				</motion.div>
 
-				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+				{/* Projects Grid */}
+				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
 					{projects.map((project, index) => (
-						<div
+						<motion.a
 							key={index}
-							className='project-card bg-gray-800 p-6 rounded-lg shadow-lg'>
-							<Image
-								src={project.image}
-								alt={project.title}
-								className='w-full h-48 object-cover rounded-t-lg mb-4'
-								width={500}
-								height={300}
-								layout='responsive'
-							/>
-							<h3 className='text-2xl font-bold mb-2'>
-								{project.title}
-							</h3>
-							<p className='text-gray-300 mb-4'>
-								{project.description}
-							</p>
-							<a
-								href={project.link}
-								className='text-yellow-500 hover:underline'>
-								Learn More →
-							</a>
-						</div>
+							href={project.link}
+							target='_blank'
+							rel='noopener noreferrer'
+							className='block rounded-lg overflow-hidden shadow-md bg-white border-l-4 border-[#fbc02d] transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-lg'
+							initial='hidden'
+							whileInView='visible'
+							viewport={{ once: true }}
+							variants={fadeIn}
+							transition={{
+								duration: 0.6,
+								delay: index * 0.2, // Stagger the animation
+							}}>
+							{/* Project Image */}
+							<div className='relative w-full h-60'>
+								<Image
+									src={project.image}
+									alt={project.title}
+									className='object-cover w-full h-full'
+									fill
+								/>
+							</div>
+							{/* Project Info */}
+							<div
+								className='p-6 flex flex-col'
+								style={{
+									minHeight: '200px',
+									overflow: 'hidden',
+								}}>
+								<h3
+									className='text-2xl font-bold mb-4'
+									style={{
+										color: '#18141c',
+									}}>
+									{project.title}
+								</h3>
+								<p
+									className='text-lg leading-relaxed mb-4 flex-grow'
+									style={{
+										color: '#4c4c4c',
+									}}>
+									{project.description}
+								</p>
+							</div>
+						</motion.a>
 					))}
 				</div>
-			</section>
-		</div>
+			</div>
+		</motion.section>
 	);
 }
 

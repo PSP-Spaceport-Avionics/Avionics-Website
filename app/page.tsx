@@ -17,7 +17,7 @@ export default function Page() {
 			<div className='mainContent'>
 				<Home />
 				<About />
-				<History />
+				{/*<History /> */}
 				<Projects />
 			</div>
 			<ScrollLogic />

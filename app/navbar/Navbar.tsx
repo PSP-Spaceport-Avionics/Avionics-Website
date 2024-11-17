@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import NavBarButton from './NavbarButton';
 import NavbarLogo from './NavbarLogo';
 import './Navbar.css';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const buttons = [
-	{ href: 'about', label: 'About' },
-	{ href: 'history', label: 'History' },
+	{ href: 'overview', label: 'Overview' },
+	//{ href: 'history', label: 'History' },
 	{ href: 'projects', label: 'Projects' },
 	//{ href: 'contact', label: 'Contact' },
 ];
@@ -33,7 +34,7 @@ function Navbar() {
 	const updateView = () => {
 		setIsMobileView(window.innerWidth <= 768);
 		if (window.innerWidth > 768) {
-			setIsDropdownOpen(false); // Close dropdown if resizing back to desktop view
+			setIsDropdownOpen(false);
 		}
 	};
 
@@ -54,7 +55,6 @@ function Navbar() {
 		};
 	}, [lastScrollY]);
 	useEffect(() => {
-		// Toggle 'no-scroll' class on both html and body elements
 		if (isDropdownOpen) {
 			document.body.classList.add('no-scroll');
 			document.documentElement.classList.add('no-scroll');
@@ -72,7 +72,7 @@ function Navbar() {
 		if (targetElement) {
 			targetElement.scrollIntoView({ behavior: 'smooth' });
 		}
-		setIsDropdownOpen(false); // Close dropdown after click
+		setIsDropdownOpen(false);
 	};
 
 	return (
@@ -86,7 +86,7 @@ function Navbar() {
 					<button
 						className='dropdown-toggle'
 						onClick={toggleDropdown}>
-						Menu
+						<MenuIcon fontSize='large' />
 					</button>
 					{isDropdownOpen && (
 						<div className='dropdown-menu'>
